@@ -1,0 +1,61 @@
+''''Deloitte problem 
+    return true is sum of any sub array is equal to 0'''
+
+def logic():
+    arr = [4,2,-3,1,6]
+
+    left = 0
+    right = len(arr)
+    while True:
+        arr2 = arr[left:]
+        arr4 = arr[:right]
+        right -= 1
+        left += 1
+        if not arr2:
+            break
+        print(arr2)
+        print(arr4)
+        
+    left = 1
+    right = -1
+
+    while True:
+        arr3 = arr[left:right]
+        left += 1
+        right -= 1
+        if not arr3:
+            break 
+        print(arr3)
+        
+        
+    
+arr = [4,2,-3,1,6]
+def main(arr):
+    if 0 in arr or sum(arr) == 0:
+        return True
+    else:
+        y = 0
+        while y <= len(arr):
+            first = 0
+            second = 2+y
+            while second <= len(arr):
+                arr1 = arr[first:second]
+                first += 1
+                second += 1
+                if sum(arr1) == 0:
+                    return True
+                 
+            y += 1
+        else:
+            return False
+
+arr = [[4,2,-3,1,6],[-3,2,3,1,6],[-3,2,0,1,6],[4,5,2,1,-1]]
+for a in arr:
+    print(main(a))
+            
+            
+            
+        
+        
+        
+        

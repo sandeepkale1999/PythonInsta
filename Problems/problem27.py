@@ -1,0 +1,33 @@
+# pooja's deloitte problem. 
+
+x = 15
+arr2 = [1,2,30,40,5,6,7,80]
+
+xf = []
+for i in range(2,x+1):
+    if x%i == 0:
+        xf.append(i)
+            
+    
+for i in arr2:
+    for j in xf:
+        if(i%j == 0):
+            break
+    else:
+        print(i,end = ' ')
+        
+        
+   
+N = int(input())
+dic = {}
+for i in range(N):
+    (name, pw) = input().split()
+    dic[name] = pw
+
+print(dic)    
+
+
+
+    
+    
+    

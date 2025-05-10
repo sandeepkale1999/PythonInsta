@@ -1,0 +1,19 @@
+## find all permutations of a string
+
+from itertools import permutations
+
+
+def allPermutations(str):
+    permList = permutations(str)
+    
+    for perms in list(permList):
+        print(''.join(perms))
+
+
+
+
+num = '734'
+allPermutations(num)
+
+ 
+

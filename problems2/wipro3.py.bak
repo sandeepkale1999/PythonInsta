@@ -1,0 +1,54 @@
+# count the repeating digits in the string
+num = '1234512'
+num_set = set(num)
+print(num_set)
+count = 0
+for i in num_set:
+    if num.count(i) > 1:
+        count += 1 
+        
+print(count)
+
+
+name = 'prodata'
+print(name.replace('a',''))
+
+final = []
+def flaten(arr):
+    for a in arr:
+        if type(a) == list:
+            flaten(a)
+        else:
+            final.append(a)
+    
+
+
+num = '145279886'
+def main(num):
+    n = len(num)
+    arr = []
+    for i in range(0,n,2):
+        sub = [int(num[i]),int(num[i+1])]
+        arr.append(sub)
+        
+    return arr
+    
+if len(num)%2 == 0:
+    arr = main(num)
+else:
+    arr = main(num[:len(num)-1])
+    arr.append([int(num[-1])])
+    
+print(arr)
+
+for x in arr:
+    if len(x) > 1:
+        if arr.index(x)%2 == 0:
+            x.remove(x[0])
+        else:
+            x.remove(x[1])
+            
+print(arr)
+flaten(arr)
+print(final )
+print(''.join(list(map(str,final))))

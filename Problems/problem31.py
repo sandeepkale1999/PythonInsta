@@ -1,0 +1,34 @@
+# deloitte problem. 
+
+'''remove any letter from the given string appearing in between s and r 
+    print the string after removing the all possible letter'''
+
+
+string = 'Professor'
+string = 'SarkSurvey'
+string_list = list(string.lower())
+print(string_list)
+
+start = 0
+end = 2
+while end < len(string_list):
+    if string_list[start] == 's' and string_list[end] == 'r':
+        string_list.pop(start+1)    # removing element with reference to index
+        
+    start += 1
+    end += 1
+   
+print(string_list)
+final = ''.join(string_list)
+print(final)
+
+
+
+N = int(input())
+dic = {}
+for i in range(N):
+    (name,pw) = map(str, input().split())
+    dic[name] = pw
+print(dic)
+
+

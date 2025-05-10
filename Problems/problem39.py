@@ -1,0 +1,59 @@
+## Zensar 2
+def main1():
+    n = int(input())
+    arr = [int(x) for x in input().split()]
+    l = len(arr)
+    triples = [(arr[i],arr[j],arr[k]) for i in range(l) for j in range(i+1,l) for k in range(j+1,l) if arr[i]*arr[i]==arr[j]*arr[j]+arr[k]*arr[k] or arr[j]*arr[j]==arr[i]*arr[i]+arr[k]*arr[k] or arr[k]*arr[k] == arr[i]*arr[i]+arr[j]*arr[j] ]
+
+    triples.sort()
+    for x in triples:
+        for y in sorted(x):
+            print(y, end = ' ')
+        print()
+            
+            
+def main2():
+    arr = [5,12,13,4,15,16,17,3,19,20]
+    res = []
+    n = len(arr)
+    for i in range(n):
+        for j in range(i+1,n):
+            for k in range(j+1,n):
+                a = arr[i]
+                b = arr[j]
+                c = arr[k]
+                if a*a==b*b+c*c or b*b==a*a+c*c or c*c==a*a+b*b:
+                    res.append(sorted((a,b,c)))
+    res.sort()
+    for tup in res:
+        a,b,c  = tup 
+        print(a,b,c)
+                
+                
+main2()
+print()
+## done  
+
+def main3():
+    arr = [5,12,13,4,15,16,17,3,19,20]
+    squares = [i*i for i in arr]
+    res = []
+    for x in range(len(arr)):
+        for y in range(x+1,len(arr)):
+            a = arr[x];b = arr[y]
+            pro = a*a+b*b
+            if pro in squares:
+                res.append(sorted([a,b,int(pro**0.5)]))
+    res.sort()            
+    print(res)
+    for s in res:
+        for k in s:
+            print(k, end = ' ')
+        print()
+            
+                
+            
+   
+main3()
+
+    

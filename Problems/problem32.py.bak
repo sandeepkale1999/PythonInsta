@@ -1,0 +1,12 @@
+import numpy as np 
+
+a = [int(x) for x in input().split()]
+b = [int(y) for y in input().split()]
+
+
+
+# inner product of a and ba 
+print(np.inner(a,b))
+
+# outer product of a and b
+print(np.outer(a,b))

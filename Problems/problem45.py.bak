@@ -1,0 +1,26 @@
+## array right rotation 
+ 
+dic = {'A':'a', 'B':'b', 'C':'c', 'D':'c', 'E':'e', 'F':'b'}
+## op -- 
+
+values = list(dic.values())
+v_set = set(values)
+
+def get_key(val):
+    for k,v in dic.items():
+        if val == v:
+            return k
+  
+
+
+for i in v_set:
+    if values.count(i)>1:
+        rep = i 
+        for m in range(values.count(i)):  
+            target = get_key(rep)
+            del dic[target]
+
+ 
+  
+
+print(dic)

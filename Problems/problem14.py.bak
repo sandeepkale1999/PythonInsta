@@ -1,0 +1,26 @@
+import datetime
+import calendar
+
+def main():
+
+    def findDay(date):
+        born = datetime.datetime.strptime(date, '%d %m %Y').weekday()
+        return (calendar.day_name[born])
+
+    N = int(input())
+    dates = []
+    for _ in range(N):
+        dates.append(input())
+        
+    for date in dates:
+        date = date.replace('/',' ')
+        print(findDay(date))
+        
+        
+    
+def findDay2(date):
+    day, month, year = (int(i) for i in date.split('/'))
+    born = datetime.date(year,month,day)
+    print(born.strftime('%A'))
+    
+findDay2('03/02/2019')

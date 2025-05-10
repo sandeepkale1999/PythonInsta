@@ -1,0 +1,24 @@
+## Zensar 1
+
+strr = input()
+arr = list(strr)
+s = 0
+for ch in strr:
+    if ch.isnumeric():
+        s += int(ch)
+        arr.remove(ch)
+
+strr2 = ''.join(arr)
+print(strr2)
+print(s)
+
+
+def main():
+        
+    arr = list(map(int,input().split()))
+
+    a,b,c = map(int,input().split())
+
+    key,value = map(str,input().split())
+
+       

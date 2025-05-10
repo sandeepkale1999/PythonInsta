@@ -1,0 +1,14 @@
+# cook your dish here
+
+N = int(input())
+for i in range(N):
+    companies = [x for x in input().split()]
+    offers = [y for y in input().split()]
+    
+    for comp in companies:
+        if comp in offers:
+            print(comp)
+            break
+            
+    print(companies, offers)
+     

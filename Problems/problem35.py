@@ -1,0 +1,41 @@
+n = 3
+m = 3
+p = [[3,2,5],
+    [8,9,1],
+    [4,7,6]]
+
+c = [[1,1,1],
+    [1,1,1],
+    [1,1,1]]
+    
+pr = p[::-1]
+cr = c[::-1]
+
+costs = []
+path = []
+for row in pr:
+    cs = []
+    if pr.index(row) == 0:
+        for j in row:
+            cs.append(j)
+        costs.append(cs)
+    else:
+        for k in row:
+            cs.append(k-cr[pr.index(row)][row.index(k)])
+        costs.append(cs)
+        
+s = 0 
+for r in costs:
+    s += min(r)
+
+for x in costs[::-1]:
+    if costs.index(x) == 0:
+        path.append(min(x))
+    else:
+        path.append(min(x)+1)
+print(s)         
+            
+        
+
+print(costs)
+print('path',path) 

@@ -1,0 +1,64 @@
+'''Pythogorian triplets counter in a given range. DELOITTE'''
+'''Very Importat Logic'''
+
+def main1():
+    x = 1
+    y = 20
+    c = range(1,5)
+    csquare = [i*i for i in range(x,y+1)]
+
+    arr =[]
+    count = 0
+    for i in range(x,y+1):
+        for j in range(i+1, y+1):
+            sq = i*i + j*j 
+            if sq in csquare:
+                count += 1
+                
+    print(count)
+
+# print pythofarian triplets
+def main2():
+    x = 1
+    y = 20
+    csquare = [i*i for i in range(x,y+1)]
+
+    arr =[]
+    count = 0
+    for i in range(x,y+1):
+        for j in range(i+1, y+1):
+            sq = i*i + j*j 
+            if sq in csquare:
+                print(i,j,int((sq)**0.5))
+                arr.append((i,j,int((sq)**0.5)))
+                
+    print(arr)
+              
+                
+    
+ 
+def main3():
+    x = 1
+    y = 20
+    count = 0
+    for i in range(x,y+1):
+        for j in range(i+1,y+1):
+            for k in range(j+1,y+1):
+                if i*i == j*j + k*k or j*j == i*i+k*k or k*k == i*i+j*j:
+                    print(i,j,k)
+                    count += 1
+                    
+    print('Total pythogorian triplets are: ',count)
+            
+            
+def main4():
+    x = 1
+    y = 20
+    arr = [(i,j,k) for i in range(x,y+1) for j in range(i+1,y+1) for k in range(j+1,y+1) if i*i == j*j + k*k or j*j == i*i+k*k or k*k == i*i+j*j]
+    
+    print(arr)
+    print(len(arr))
+    
+main4()
+
+

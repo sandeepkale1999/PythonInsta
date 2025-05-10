@@ -1,0 +1,61 @@
+''' Deloitte problem 
+    find sum of middle row elements 
+    find sum of middle column elements 
+    add both sums 
+    reverse the sum 
+    print the result
+'''
+
+arr3 = [[1, 2, 3, 4, 5], 
+        [6, 7, 8, 9, 10], 
+        [2, 3, 2, 1, 1], 
+        [5, 4, 3, 2, 1], 
+        [4, 4, 1, 2, 3]]
+        
+def main(arr):
+    mid = len(arr)//2
+    row_pro = 1
+    for row in arr:
+        row_pro *= row[mid]
+        print(row_pro)
+        
+    col_pro = 1
+    for i in arr[mid]:
+        col_pro *= i
+      
+    s = row_pro+col_pro
+    rev_s = int(str(s)[::-1])
+    
+    return (rev_s)
+    
+print(main(arr3))
+  
+def driver():
+    n = int(input())
+    arr = []
+    for _ in range(n):
+        arr.append([int(x) for x in input().split()])
+        
+    ''' sample input
+            5
+        1 2 3 4 5
+        6 7 8 9 10
+        2 3 2 1 1
+        5 4 3 2 1
+        4 4 1 2 3
+  
+    '''
+    
+    print(arr)
+    
+     
+
+def main2(): 
+    n = int(input())
+    arr2 = []
+    for _ in range(n):
+        arr2.append(input().split())
+    
+    print(arr2)
+    
+# input().split() is already a list of string elements by default. use list comprehension to get it into int. 

@@ -1,0 +1,30 @@
+'''arr1 = [1,2,3,4]
+    arr2 = [5,6,7]
+    output = [1,5,2,6,3,7,4'''
+    
+N = int(input())
+M = int(input())
+
+arr1 = [int(x) for x in input().split()]
+arr2 = [int(y) for y in input().split()]
+
+
+arr3 = []
+count = 1
+index1 = 0
+index2 = 0
+while True:
+    if count % 2 != 0 and index1 < len(arr1):
+        arr3.append(arr1[index1])
+        index1 += 1
+    elif count%2 == 0 and index2 < len(arr2):
+        arr3.append(arr2[index2])
+        index2 += 1
+        
+    count += 1
+    if len(arr3) == M+N:
+        break
+    
+      
+print(arr3)
+

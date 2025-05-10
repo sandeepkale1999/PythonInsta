@@ -1,0 +1,20 @@
+
+
+def main(num):
+    c = 0
+    final = ''
+    for i in range(0,len(num),2):
+        print(num[i],num[i+1])
+        if c%2 == 0:
+            final += num[i]
+        else:
+            final += num[i+1]
+        c+=1
+
+    return(final)    
+    
+num = '145279886'
+if len(num)%2 == 0:
+    print(main(num))
+else:
+    print(main(num[:len(num)-1])+num[-1])

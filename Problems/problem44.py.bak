@@ -1,0 +1,10 @@
+
+
+
+num1 = 17 
+num2 = 1
+decider = num2^12
+if num2 > num1 and decider <=8192:
+    print('ct')
+else:
+    print('cf')

@@ -1,0 +1,40 @@
+
+
+num = '145279886'
+
+final = []
+def flaten(arr):
+    for a in arr:
+        if type(a) == list:
+            flaten(a)
+        else:
+            final.append(a)
+    
+def main(num):
+    n = len(num)
+    arr = []
+    for i in range(0,n,2):
+        sub = [int(num[i]),int(num[i+1])]
+        arr.append(sub)
+        
+    return arr
+    
+if len(num)%2 == 0:
+    arr = main(num)
+else:
+    arr = main(num[:len(num)-1])
+    arr.append([int(num[-1])])
+    
+print(arr)
+
+for x in arr:
+    if len(x) > 1:
+        if arr.index(x)%2 == 0:
+            x.remove(x[0])
+        else:
+            x.remove(x[1])
+            
+print(arr)
+flaten(arr)
+print(final )
+print(''.join(list(map(str,final))))
